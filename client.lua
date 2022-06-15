@@ -919,7 +919,7 @@ end)
 CreateThread(function() -- Speeding
     while true do
         if LocalPlayer.state.isLoggedIn then
-            if QBCore.Functions.GetPlayerData().job.name ~="ambulance" then
+            if QBCore.Functions.GetPlayerData().job.name ~= "ambulance" then
                 --Update Stress
             local ped = PlayerPedId()
             if IsPedInAnyVehicle(ped, false) then
