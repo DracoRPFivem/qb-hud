@@ -919,6 +919,8 @@ end)
 CreateThread(function() -- Speeding
     while true do
         if LocalPlayer.state.isLoggedIn then
+            if QBCore.Functions.GetPlayerData().job.name ~="ambulance" then
+                --Update Stress
             local ped = PlayerPedId()
             if IsPedInAnyVehicle(ped, false) then
                 local speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * speedMultiplier
@@ -928,8 +930,9 @@ CreateThread(function() -- Speeding
                 end
             end
         end
-        Wait(10000)
-    end
+    end    
+    Wait(10000)
+   end
 end)
 
 local function IsWhitelistedWeaponStress(weapon)
